@@ -33,12 +33,12 @@ def create_product():
     return jsonify({"message":"Está é a rota de criação de produtos"})
 
 # RF: O sistema deve permitir a visualização dos detalhes de um unico produto
-@main_bp.route('/product/<int:product_id>', methods={"PUT"})
+@main_bp.route('/product/<int:product_id>', methods={"GET"})
 def get_product_by_id(product_id):
     return jsonify({"message":f"Está é a rota de visualização do detalhe do id do produto: {product_id}" })
 
 # RF: O sistema deve permitir a atualização de um unico produto e produto existente
-@main_bp.route('/product/<int:product_id>', methods={"GET"})
+@main_bp.route('/product/<int:product_id>', methods={"PUT"})
 def update_product(product_id):
     return jsonify({"message":f"Está é a rota de atualização do produto com id: {product_id}" })
 
